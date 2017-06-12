@@ -56,13 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(MainActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
-
-
     
     // Check Internet Connection!!!
     public boolean isNetworkAvailable() {
