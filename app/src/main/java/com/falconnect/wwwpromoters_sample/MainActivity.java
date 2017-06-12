@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     // Check Internet Connection!!!
     public boolean isNetworkAvailable() {
         ConnectivityManager connectivity = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
