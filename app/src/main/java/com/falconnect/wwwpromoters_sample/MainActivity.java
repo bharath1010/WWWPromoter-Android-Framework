@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.falconnect.wwwpromoterslib.PromotersConnection;
+import com.wwwpromoter.android_sdk.WWWPromotersConnection;
 
 
 public class MainActivity extends AppCompatActivity {
+
     //Lib Files
-    public PromotersConnection getConnection;
+    public WWWPromotersConnection getConnection;
 
     //Buttons
     Button more_games;
@@ -24,11 +25,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Lib File Initilize
-        getConnection = new PromotersConnection();
-
         //Button Initilize
         more_games = (Button) findViewById(R.id.more_games);
+
 
         //Button OnClick Listener
         more_games.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //If Internet Available
                 if (isNetworkAvailable()) {
+                    //Lib File Initilize
+                    getConnection = new WWWPromotersConnection();
+                    getConnection.feedId(MainActivity.this, "22513");
                     getConnection.GetConnection(MainActivity.this);
                 }
                 //If Internet not Available
